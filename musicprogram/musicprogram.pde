@@ -12,8 +12,8 @@ AudioPlayer song1;//creat"play list " variables holding extenstions wav, aiff,au
 void setup (){
 fullScreen();
 minim = new Minim (this);//leads from data directiory,loadFile should also load from project floder just like loadiamge().
-song1 = minim.loadFile("Music/Ruel_-_GROWING_UP_IS_WEIRD_Forbesloaded.com.mp3");//able to pass absulote path , file name and url 
-};
+song1 = minim.loadFile("music/ruel.mp3");//able to pass absulote path , file name and url 
+}
 //
 void draw() {
 if(song1.isLooping())println("there are",song1.loopCount(),"loops left");
