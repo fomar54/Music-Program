@@ -20,11 +20,10 @@ void setup()
 {
   //size(500, 600); //Remeber, Display Geoemtry is Mandatory
   minim = new Minim(this); //loads from data directory, loadFile should also laod from project folder, like loadImage()
-  song[currentSong] = minim.loadFile("music/Ruel_-_LET_THE_GRASS_GROW_The360Report.com.mp3"); //albe to pass absulute path, file name & extension, and URL
-  song[currentSong+=1] = minim.loadFile("music/Rex-Orange-County-Amazing.mp3");
-  song[currentSong+=1] = minim.loadFile("music/One Direction - Story of My Life(1).mp3");
-  song[currentSong+=1] = minim.loadFile("music/Gloria Gaynor - I Will Survive.mp3");
-  //
+  song[currentSong] = minim.loadFile("music/Ruel_-_LET_THE_GRASS_GROW_The360Report.com.mp3"); //albe to pass absulute path, file name & extension, and URL song[currentSong+=1] = minim.loadFile("music/Rex-Orange-County-Amazing.mp3"); song[currentSong+=1] = minim.loadFile("music/One Direction - Story of My Life(1).mp3"); song[currentSong+=1] = minim.loadFile("music/Gloria Gaynor - I Will Survive.mp3"); //
+  minim.loadFile("music/Rex-Orange-County-Amazing.mp3"); song[currentSong+=1] = minim.loadFile("music/One Direction - Story of My Life(1).mp3"); song[currentSong+=1] = minim.loadFile("music/Gloria Gaynor - I Will Survive.mp3"); //
+minim.loadFile("music/One Direction - Story of My Life(1).mp3"); 
+minim.loadFile("music/Gloria Gaynor - I Will Survive.mp3"); //
   currentSong-=currentSong; //currentSong = currentSong - currentSong
   for ( int i=currentSong; i<song.length; i++ ) {
     songMetaData[i] = song[i].getMetaData();
@@ -115,15 +114,25 @@ void keyPressed()
   if ( key=='n' || key=='N' ) {//Next Button
     if ( song[currentSong].isPlaying() ) {
       //Seriuos Problems, playing multiple songs at the same time
+      song[currentSong].pause();
+      song[currentSong].rewind();
+      nextButtonArrayCatch();
+      song[currentSong].play();
     } else {
-      currentSong++;
+      song[currentSong].rewind(); //Built-in rewind feature feature so all songs start at ZERO
+      nextButtonArrayCatch();
+      song[currentSong].play();
     }
   }//End Next Button
+  //
+  if ( key=='b' || key=='B' ) {}//End Back Button
+  //An Empty Body will not break our program but you will not have a working bee button
+  //Assignment: create a working bee button
   //
 }//End keyPressed
 //
 void mousePressed() {
-}//End mousePressed
+  }//End mousePressed
 //
 //End MAIN
 //
