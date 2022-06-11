@@ -21,7 +21,7 @@ void setup()
   //size(500, 600); //Remeber, Display Geoemtry is Mandatory
   minim = new Minim(this); //loads from data directory, loadFile should also laod from project folder, like loadImage()
   song[currentSong] = minim.loadFile("music/Ruel_-_LET_THE_GRASS_GROW_The360Report.com.mp3"); //albe to pass absulute path, file name & extension, and URL song[currentSong+=1] = minim.loadFile("music/Rex-Orange-County-Amazing.mp3"); song[currentSong+=1] = minim.loadFile("music/One Direction - Story of My Life(1).mp3"); song[currentSong+=1] = minim.loadFile("music/Gloria Gaynor - I Will Survive.mp3"); //
-  minim.loadFile("music/Rex-Orange-County-Amazing.mp3"); song[currentSong+=1] = minim.loadFile("music/One Direction - Story of My Life(1).mp3"); song[currentSong+=1] = minim.loadFile("music/Gloria Gaynor - I Will Survive.mp3"); //
+  //minim.loadFile("music/Rex-Orange-County-Amazing.mp3"); song[currentSong+=1] = minim.loadFile("music/One Direction - Story of My Life(1).mp3"); song[currentSong+=1] = minim.loadFile("music/Gloria Gaynor - I Will Survive.mp3"); //
 minim.loadFile("music/One Direction - Story of My Life(1).mp3"); 
 minim.loadFile("music/Gloria Gaynor - I Will Survive.mp3"); //
   currentSong-=currentSong; //currentSong = currentSong - currentSong
